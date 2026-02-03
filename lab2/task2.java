@@ -1,22 +1,26 @@
 public class StarTriangle {
 
-    private int count;
+    private int width;
 
-    public StarTriangle(int count) {
-        this.count = count;
+    public StarTriangle(int width) {
+        this.width = width;
     }
 
-    public void printTriangle() {
-        for (int i = 1; i <= count; i++) {
+    public String toString() {
+        String triangle = "";
+        for (int i = 1; i <= width; i++) {
             for (int j = 1; j <= i; j++) {
-                System.out.print("[*]");
+                triangle += "[*]";
             }
-            System.out.println();              
+            if (i < width) {
+                triangle += "\n";
+            }
         }
+        return triangle;
     }
 
     public static void main(String[] args) {
-        StarTriangle triangle = new StarTriangle(4); 
-        triangle.printTriangle();                   
+        StarTriangle small = new StarTriangle(3);
+        System.out.println(small.toString());
     }
 }
